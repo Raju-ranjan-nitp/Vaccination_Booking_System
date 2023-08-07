@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.controller;
+package com.example.vaccinationbookingsystem.Controller;
 
 import com.example.vaccinationbookingsystem.dto.RequestDto.BookAppointmentRequestDto;
 import com.example.vaccinationbookingsystem.dto.ResponseDto.BookAppointmentResponseDto;

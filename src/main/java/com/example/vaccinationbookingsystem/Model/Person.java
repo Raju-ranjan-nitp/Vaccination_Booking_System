@@ -31,7 +31,7 @@ class Person {
     @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
     List<Dose> dosesTaken = new ArrayList<>();
 
-    @OneToOne(mappedBy = "persom",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "person",cascade = CascadeType.ALL)
     Certificate certificate;
 
     @OneToMany(mappedBy ="person", cascade = CascadeType.ALL)
