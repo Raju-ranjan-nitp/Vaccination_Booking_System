@@ -1,6 +1,6 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
-import com.example.vaccinationbookingsystem.Enum.DoseType;
+import com.example.sanjivnibooty.Enum.DoseType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,16 +15,20 @@ import java.util.Date;
 @Getter
 @Setter
 public class Dose {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    int id;
-     String doseId;
-     @Enumerated(value = EnumType.STRING)
-     DoseType doseType;
-     @CreationTimestamp
-     Date vaccinationdoseDate;
-     @ManyToOne
-     @JoinColumn //introduce foreign key in child table
-     Person person;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+
+    String doseId;
+
+    @Enumerated(value = EnumType.STRING)
+    DoseType doseType;
+
+    @CreationTimestamp
+    Date vaccinationDate;
+
+    @ManyToOne
+    @JoinColumn
+    Person person;
 }

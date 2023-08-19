@@ -1,9 +1,10 @@
-package com.example.vaccinationbookingsystem.repository;
+package com.example.sanjivnibooty.Repository;
 
-import com.example.vaccinationbookingsystem.Model.VaccinationCenter;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.sanjivnibooty.Model.VaccinationCenter;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface VaccinationCenterRepository extends JpaRepository<VaccinationCenter,Integer> {
-
+@Repository
+public interface VaccinationCenterRepository extends JpaRepository<VaccinationCenter, Integer> {
 }

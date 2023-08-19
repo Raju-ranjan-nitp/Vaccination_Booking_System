@@ -1,6 +1,5 @@
-package com.example.vaccinationbookingsystem.dto.ResponseDto;
+package com.example.sanjivnibooty.dto.ResponseDto;
 
-import com.example.vaccinationbookingsystem.Model.VaccinationCenter;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -9,9 +8,9 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class DoctorResponseDto {
+
     String name;
     String message;
-    CenterResponseDto centerResponseDto;
+    CenterRersonseDto centerRersonseDto;
 }

@@ -1,9 +1,10 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
-import com.example.vaccinationbookingsystem.Enum.Gender;
+import com.example.sanjivnibooty.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,31 +15,32 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public
-class Person {
+public class Person {
+
     @Id
-            @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String name;
+
     int age;
-    @Column(unique = true, nullable = false) // email can't be duplicate and can't be null
+
+    @Column(unique = true)
     String emailId;
-    @Enumerated(EnumType.STRING) //to tell data base store my enum as string because data base doesn't understand enum
+
+    @Enumerated(EnumType.STRING)
     Gender gender;
 
-    boolean Dose1Taken;
-    boolean Dose2Taken;
-    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
-    List<Dose> dosesTaken = new ArrayList<>();
+    boolean isDose1Taken;
 
-    @OneToOne(mappedBy = "person",cascade = CascadeType.ALL)
+    boolean isDose2Taken;
+
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    List<Dose> doseTaken=new ArrayList<>();
+
+    @OneToOne(mappedBy = "person" , cascade = CascadeType.ALL)
     Certificate certificate;
 
-    @OneToMany(mappedBy ="person", cascade = CascadeType.ALL)
-    List<Appointment>appointments = new ArrayList<>();
-
-    @ManyToOne
-    @JoinColumn
-    Doctor doctor;
-
+    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
+    List<Appointment> appointments=new ArrayList<>();
 }

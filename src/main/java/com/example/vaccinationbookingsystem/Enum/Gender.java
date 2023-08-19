@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.Enum;
+package com.example.sanjivnibooty.Enum;
 
 public enum Gender {
     MALE,

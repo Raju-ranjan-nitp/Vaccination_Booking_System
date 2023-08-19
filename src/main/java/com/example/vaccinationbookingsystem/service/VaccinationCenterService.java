@@ -1,34 +1,33 @@
-package com.example.vaccinationbookingsystem.service;
+package com.example.sanjivnibooty.Service;
 
-import com.example.vaccinationbookingsystem.Model.VaccinationCenter;
-import com.example.vaccinationbookingsystem.dto.RequestDto.CenterRequestDto;
-import com.example.vaccinationbookingsystem.dto.ResponseDto.CenterResponseDto;
-import com.example.vaccinationbookingsystem.repository.VaccinationCenterRepository;
+import com.example.sanjivnibooty.Model.VaccinationCenter;
+import com.example.sanjivnibooty.Repository.VaccinationCenterRepository;
+import com.example.sanjivnibooty.dto.RequestDto.CenterRequestDto;
+import com.example.sanjivnibooty.dto.ResponseDto.CenterRersonseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public
-class VaccinationCenterService {
+public class VaccinationCenterService {
+
     @Autowired
     VaccinationCenterRepository centerRepository;
-    public CenterResponseDto addCenter(CenterRequestDto centerRequestDto) {
-        //request dto -> entity
+
+    public CenterRersonseDto addCenter(CenterRequestDto centerRequestDto) {
+        // request dto -> entity
         VaccinationCenter center = new VaccinationCenter();
         center.setCenterName(centerRequestDto.getCenterName());
         center.setCenterType(centerRequestDto.getCenterType());
-        center.setAddress(center.getAddress());
+        center.setAddress(centerRequestDto.getAddress());
 
-// save entity to db
+        // save entity to db
         VaccinationCenter savedCenter = centerRepository.save(center);
 
-        //Entity -> responseDto
-        CenterResponseDto centerResponseDto = new CenterResponseDto();
+        // entity -> response Dto
+        CenterRersonseDto centerResponseDto = new CenterRersonseDto();
         centerResponseDto.setCenterName(savedCenter.getCenterName());
-        centerResponseDto.setCenterType(savedCenter.getCenterType());
         centerResponseDto.setAddress(savedCenter.getAddress());
-
-         return centerResponseDto;
-
+        centerResponseDto.setCenterType(savedCenter.getCenterType());
+        return centerResponseDto;
     }
 }

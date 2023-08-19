@@ -1,7 +1,7 @@
-package com.example.vaccinationbookingsystem.Enum;
+package com.example.sanjivnibooty.Enum;
 
 public enum CenterType {
-    PRIVATE_HOSPITAL,
+   PRIVATE_HOSPITAL,
     GOVT_HOSPITAL,
     NGO
 }

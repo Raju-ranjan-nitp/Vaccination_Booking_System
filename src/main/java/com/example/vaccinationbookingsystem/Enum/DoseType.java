@@ -1,7 +1,8 @@
-package com.example.vaccinationbookingsystem.Enum;
+package com.example.sanjivnibooty.Enum;
 
 public enum DoseType {
+
     COVAXIN,
     SPUTNIK,
-    COVISHILD
+    COVIESHIELD
 }

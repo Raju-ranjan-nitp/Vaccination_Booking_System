@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,14 +10,16 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class Certificate {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String certificateNo;
+    String certificate;
+
     String confirmationMessage;
+
     @OneToOne
     @JoinColumn
     Person person;

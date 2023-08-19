@@ -1,6 +1,6 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
-import com.example.vaccinationbookingsystem.Enum.Gender;
+import com.example.sanjivnibooty.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,20 +15,26 @@ import java.util.List;
 @Getter
 @Setter
 public class Doctor {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String name;
+
     int age;
-    @Column(unique = true, nullable = false) // email can't be duplicate and can't be null
+
+    @Column(unique = true)
     String emailId;
-    @Enumerated(EnumType.STRING) //to tell data base store my enum as string because data base doesn't understand enum
+
+    @Enumerated(EnumType.STRING)
     Gender gender;
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
-    List<Appointment> appointments = new ArrayList<>();
+    List<Appointment> appointments= new ArrayList<>();
 
     @ManyToOne
     @JoinColumn
     VaccinationCenter center;
+
 }

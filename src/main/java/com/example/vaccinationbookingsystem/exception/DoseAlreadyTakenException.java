@@ -1,7 +1,8 @@
-package com.example.vaccinationbookingsystem.exception;
+package com.example.sanjivnibooty.Exception;
 
 public class DoseAlreadyTakenException extends RuntimeException{
-    public  DoseAlreadyTakenException(String message){
-        super((message));
+
+    public DoseAlreadyTakenException(String message){
+        super(message);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem;
+package com.example.sanjivnibooty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class VaccinationBookingSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VaccinationBookingSystemApplication.class, args);
+		SpringApplication.run(com.example.sanjivnibooty.VaccinationBookingSystemApplication.class, args);
 	}
 
 }

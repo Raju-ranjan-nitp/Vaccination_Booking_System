@@ -1,4 +1,5 @@
-package com.example.vaccinationbookingsystem.dto.ResponseDto;
+package com.example.sanjivnibooty.dto.ResponseDto;
+
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -6,10 +7,10 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
-
+@Getter
 public class AddPersonResponseDto {
+
     String name;
     String message;
 }

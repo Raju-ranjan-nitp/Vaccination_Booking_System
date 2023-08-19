@@ -1,6 +1,7 @@
-package com.example.vaccinationbookingsystem.exception;
+package com.example.sanjivnibooty.Exception;
 
-public class PersonNotFoundException extends RuntimeException{
+public class PersonNotFoundException extends RuntimeException {
+
     public PersonNotFoundException(String message){
         super(message);
     }

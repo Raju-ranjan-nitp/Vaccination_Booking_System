@@ -1,9 +1,10 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
-import com.example.vaccinationbookingsystem.Enum.CenterType;
+import com.example.sanjivnibooty.Enum.CenterType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.apache.catalina.LifecycleState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +16,18 @@ import java.util.List;
 @Getter
 @Setter
 public class VaccinationCenter {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     String centerName;
     @Enumerated(value = EnumType.STRING)
     CenterType centerType;
+
     String address;
-    @OneToMany(mappedBy = "center",cascade = CascadeType.ALL )
+
+    @OneToMany(mappedBy = "center", cascade = CascadeType.ALL)
     List<Doctor> doctors = new ArrayList<>();
 
 }

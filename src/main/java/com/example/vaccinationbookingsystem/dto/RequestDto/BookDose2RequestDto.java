@@ -4,14 +4,13 @@ import com.example.sanjivnibooty.Enum.DoseType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PACKAGE)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class BookDose1RequestDto {
+public class BookDose2RequestDto {
 
-    int personId;
-
+    int personId ;
     DoseType doseType;
 }

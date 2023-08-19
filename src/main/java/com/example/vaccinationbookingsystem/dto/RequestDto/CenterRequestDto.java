@@ -1,6 +1,6 @@
-package com.example.vaccinationbookingsystem.dto.RequestDto;
+package com.example.sanjivnibooty.dto.RequestDto;
 
-import com.example.vaccinationbookingsystem.Enum.CenterType;
+import com.example.sanjivnibooty.Enum.CenterType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -9,10 +9,10 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Getter
 @Setter
-
-
 public class CenterRequestDto {
+
     String centerName;
     CenterType centerType;
-    String address;
+    String  address;
+
 }

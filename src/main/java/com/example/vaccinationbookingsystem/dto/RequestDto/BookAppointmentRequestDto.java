@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.dto.RequestDto;
+package com.example.sanjivnibooty.dto.RequestDto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,7 +8,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class BookAppointmentRequestDto {
     int personId;
     int doctorId;

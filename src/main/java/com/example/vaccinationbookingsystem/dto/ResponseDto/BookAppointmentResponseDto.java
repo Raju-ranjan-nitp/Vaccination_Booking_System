@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.dto.ResponseDto;
+package com.example.sanjivnibooty.dto.ResponseDto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -10,12 +10,10 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class BookAppointmentResponseDto {
     String personName;
     String doctorName;
     String appointmentId;
     Date appointmentDate;
-    CenterResponseDto centerResponseDto;
-
+    CenterRersonseDto centerRersonseDto;
 }

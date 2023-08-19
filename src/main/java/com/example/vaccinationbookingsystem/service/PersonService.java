@@ -1,56 +1,50 @@
-package com.example.vaccinationbookingsystem.service;
+package com.example.sanjivnibooty.Service;
 
-import com.example.vaccinationbookingsystem.Model.Person;
-import com.example.vaccinationbookingsystem.dto.RequestDto.AddPersonRequestDto;
-import com.example.vaccinationbookingsystem.dto.ResponseDto.AddPersonResponseDto;
-import com.example.vaccinationbookingsystem.exception.PersonNotFoundException;
-import com.example.vaccinationbookingsystem.repository.PersonRepository;
+import com.example.sanjivnibooty.Exception.PersonNotFoundException;
+import com.example.sanjivnibooty.Model.Person;
+import com.example.sanjivnibooty.Repository.PersonRepository;
+import com.example.sanjivnibooty.dto.RequestDto.AddPersonRequestDto;
+import com.example.sanjivnibooty.dto.ResponseDto.AddPersonResponseDto;
+import org.hibernate.annotations.SecondaryRow;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
-
 public class PersonService {
+
     @Autowired
     PersonRepository personRepository;
-    public AddPersonResponseDto addPerson(AddPersonRequestDto addPersonRequestDto) {
-//        person.setDose1Taken(false);
-//        person.setDose2Taken(false);
-//        person.setCertificate(null);
+    public AddPersonRequestDto addPerson(AddPersonRequestDto addPersonRequestDto) {
 
-
-        //convert RequestDto -> Entity
+        //Convert Request Dto -> Entity
         Person person = new Person();
         person.setName(addPersonRequestDto.getName());
         person.setAge(addPersonRequestDto.getAge());
         person.setEmailId(addPersonRequestDto.getEmailId());
         person.setGender(addPersonRequestDto.getGender());
-        person.setDose1Taken(false);
-        person.setDose2Taken(false);
-        person.setCertificate(null);
 
-       Person savedPerson =  personRepository.save(person);
 
-     // return savedPerson;
-        //convert entity -> responseDto
+        Person savedPerson = personRepository.save(person);
+
+        //saves entity -> response dto
         AddPersonResponseDto addPersonResponseDto = new AddPersonResponseDto();
+
         addPersonResponseDto.setName(savedPerson.getName());
-        addPersonResponseDto.setMessage("Congrats! you have been registered");
-        return addPersonResponseDto;
+        addPersonResponseDto.setMessage("Congrats! you have been registred");
+
+        return addPersonRequestDto;
 
 
     }
-    public String updateEmail(String oldEmail, String newEmail){
-        Person person = personRepository.findByEmail(oldEmail);
-        if(person == null){
-            throw new PersonNotFoundException("Sorry email doesn't exist");
+
+    public String updateEmail(String oldEmail, String newEmail) {
+        Person person = personRepository.findByEmailId(oldEmail);
+        if(person== null){
+            throw new PersonNotFoundException("Sorry email dosen't exist");
         }
         person.setEmailId(newEmail);
         personRepository.save(person);
-        return "Congrats! youe email has been updated successfully";
+        return "Congrats! Your emaiil has been update successfully";
     }
-
-
-
-
 }

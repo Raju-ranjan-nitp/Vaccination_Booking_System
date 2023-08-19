@@ -1,4 +1,4 @@
-package com.example.vaccinationbookingsystem.Model;
+package com.example.sanjivnibooty.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,22 +13,24 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-
-
 public class Appointment {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String appointmentId;
+
     @CreationTimestamp
     Date appointmentDate;
-    int doseNo;
+
+
     @ManyToOne
-            @JoinColumn
+    @JoinColumn
     Person person;
+
     @ManyToOne
     @JoinColumn
     Doctor doctor;
+
 }
-
-
